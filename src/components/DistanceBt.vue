@@ -10,7 +10,7 @@
                 <span position="absolute">  <br> Condition: {{this.cond}} </span>  <br> </p> <p class="alignright">
                 <br>
                 Wind: {{this.windspeed}} MPH Direction: {{this.winddirection}}<br>
-                Temperature: {{this.temp}}&#xb0;F feels like {{this.feels_temp}}&#xb0;F <br>
+                Temperature: {{this.temp}}&#xb0;F feels like {{this.feels_temp}}&#xb0;<br>
                 Humidity: {{this.humid}}% 
             </p>
         </div>         
@@ -147,9 +147,10 @@ methods: {
 <style>
 #distid {
     font-size:20px;
-    color:#6d71ab;
-    background-color: #080c40;
-    margin-bottom:10px;
+    color:white;
+    background-color: #5B84B1FF;
+    margin-bottom:20px;
+    border-radius:10px;
 }
 #textbox {
     display: flex;

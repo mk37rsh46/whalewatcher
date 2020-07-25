@@ -1,17 +1,13 @@
 <template>
 <div>
     <ul>
-        <v-flex>
           <v-text-field v-model="inputText" 
             append-outer-icon="mdi-anchor"
             label="Enter a Location"
-            dark
             height= "40px"
             @click:append-outer='newlocation()'
-            outline
+            solo
           ></v-text-field>
-        </v-flex>
-        <br>
         <span id="disid"> Displaying sightings from the past year for: {{this.locationcurrcity}}, {{this.locationcurrstate}}
             <br>
             

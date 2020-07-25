@@ -1,6 +1,6 @@
 <template>
 <div id="accHead" >
-    {{numb | numfilter()}} {{spec}}s near  {{nere | wherefilter()}}
+<div class="text"> {{nere | wherefilter()}} </div> <div class="orcas"> {{numb | numfilter()}} {{spec}}s nearby </div> 
 </div>
 </template>
 
@@ -45,9 +45,27 @@ numfilter(a){
 #accHead{
     text-align:center;
     font-size:25px;
-    color: #d2dcfa;
+    color: white;
     width:1000px;
-    background-color: #002448;
-    margin-bottom:8px;
+    margin-bottom:10px;
+    outline-color:white;
+    background-color:#FC766AFF;
+    border-radius:11px;
+}
+.text{
+    float:left;
+    text-align:center;
+    font-size:30px;
+    padding:9px 4px;
+}
+.orcas{
+    height:50px;
+    width:500px;
+    margin-left:500px;
+    background-color:#71a6fe;
+    padding: 9px 4px;
+    font-size:30px;
+    border-radius:10px;
+    color:white;
 }
 </style>

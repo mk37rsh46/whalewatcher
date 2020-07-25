@@ -83,7 +83,7 @@ export default {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #091623;
+    background-color: #4d90fe;
   }
   #app1{
     margin-top:120px;
