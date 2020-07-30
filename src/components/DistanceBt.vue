@@ -149,7 +149,7 @@ methods: {
     font-size:20px;
     color:white;
     background-color: #5B84B1FF;
-    margin-bottom:20px;
+    margin-bottom:30px;
     border-radius:10px;
 }
 #textbox {
