@@ -1,39 +1,28 @@
 <template>
-  <div id="distid">
-      <ul>
-    Distance from current location: {{this.milestilldest}} <br> <a style="color:white" id="sadchamp" :href="derp(latter,longer)" target="_blank">   <v-btn rounded small color="black" >Open in Google Maps</v-btn></a> 
-      <br> Weather Info:
+<div id="distid">
+    <ul>
+        Distance from current location: {{this.milestilldest}} <br> <a style="color:white" id="sadchamp" :href="derp(latter,longer)" target="_blank">   <v-btn rounded small color="black" >Open in Google Maps</v-btn></a> 
+        <br> Weather Info:
         <br> <hr id="hr">
         <div id="textbox">
-        <p class="alignleft">
-  
-
-        <img :src="derping" v-if="derping != null"  align="center" >
-     <span position="absolute">  <br> Condition: {{this.cond}} </span>  <br> </p> <p class="alignright">
-     <br>
-        Wind: {{this.windspeed}} MPH Direction: {{this.winddirection}}<br>
-        Temperature: {{this.temp}}&#xb0;F feels like {{this.feels_temp}}&#xb0;F <br>
-        Humidity: {{this.humid}}% 
-    </p>
-    <!-- <p class="alignbottom">
-          <div v-if="goodtemp(this.temp)">
-            The weather is optimal for whale watching, this is <br>  not a good time to go out because of the coronavirus.
-            </div>
-        <div v-else>
-            The weather conditions are not optimal for whale watching.
-        </div> -->
-        </div> 
-        
-<hr id="hr1"> 
- <div v-if="goodtemp(this.temp)">
+            <p class="alignleft">
+                <img :src="derping" v-if="derping != null"  align="center" >
+                <span position="absolute">  <br> Condition: {{this.cond}} </span>  <br> </p> <p class="alignright">
+                <br>
+                Wind: {{this.windspeed}} MPH Direction: {{this.winddirection}}<br>
+                Temperature: {{this.temp}}&#xb0;F feels like {{this.feels_temp}}&#xb0;F <br>
+                Humidity: {{this.humid}}% 
+            </p>
+        </div>         
+        <hr id="hr1"> 
+        <div v-if="goodtemp(this.temp)">
             The weather is optimal for whale watching, but this is not a good time to go out because of the coronavirus.
-            </div>
+        </div>
         <div v-else>
             The weather conditions are not optimal for whale watching.
         </div> 
-            </ul>
-      </div>
-
+    </ul>
+</div>
 </template>
 
 <script>

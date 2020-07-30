@@ -1,20 +1,20 @@
 <template>
 <div id="appp">
-     <div class="accordion__wrapper" v-if='checking(this.info)'>
-<badger-accordion>
-    <badger-accordion-item v-for="whalesighting in info" :key="whalesighting.id">
-        <template slot="header"> <AccordionHeader :numb="whalesighting.quantity" 
-             :spec="whalesighting.species" :nere="whalesighting.location" />
-        </template> 
-        <template slot="content" >
-         <DistanceBt :latter="whalesighting.latitude" :longer="whalesighting.longitude"/>
-        </template>  
-    </badger-accordion-item>
-</badger-accordion>
+    <div class="accordion__wrapper" v-if='checking(this.info)'>
+    <badger-accordion>
+        <badger-accordion-item v-for="whalesighting in info" :key="whalesighting.id">
+            <template slot="header"> <AccordionHeader :numb="whalesighting.quantity" 
+                :spec="whalesighting.species" :nere="whalesighting.location" />
+            </template> 
+            <template slot="content" >
+                <DistanceBt :latter="whalesighting.latitude" :longer="whalesighting.longitude"/>
+            </template>  
+        </badger-accordion-item>
+    </badger-accordion>
 </div>
-<div v-else class="bigwhitetext">
-    No whales sighted recently :(
-</div>
+    <div v-else class="bigwhitetext">
+        No whales sighted recently :(
+    </div>
 </div>
 </template>
 
@@ -25,6 +25,7 @@ import DistanceBt from '@/components/DistanceBt'
 import AccordionHeader from '@/components/AccordionHeader'
 import Vue from 'vue';
 import {BadgerAccordion, BadgerAccordionItem} from 'vue-badger-accordion'
+import {mapState} from 'vuex'
 /* Initialize the plugin */
 Vue.use(AsyncComputed)
 Vue.component('BadgerAccordion', BadgerAccordion)
@@ -34,10 +35,6 @@ export default {
     data() {
         return {
             info: null,
-            locationinfo:null,
-            distanceperlat: [],
-            whalelocator: [],
-            wow: false,
         }
     },
     components: {
@@ -45,13 +42,6 @@ export default {
         BadgerAccordionItem,
         DistanceBt,
         AccordionHeader,
-    },
-    props: {
-        longitude: Number,
-        lat: Number,
-        state: String,
-        city: String,
-
     },
     methods: {
         notNull(){
@@ -63,12 +53,7 @@ export default {
             }
           
         },
-        poggers(){
-            this.wow=true;
-            console.log("yes");
-        },
         checking(a){
-            console.log("checking" + a);
             if(a == null | a == ""){
                 return false;
             }
@@ -78,13 +63,16 @@ export default {
     },
     asyncComputed: {
         newLocation(){
-        const response = axios.get('http://hotline.whalemuseum.org/api.json?&near=' + this.lat + "," + this.longitude+ '&limit=5')
+        console.log('http://hotline.whalemuseum.org/api.json?&near=' + this.$store.state.latitude + "," + this.$store.state.longitude+ '&limit=5')
+        const response = axios.get('http://hotline.whalemuseum.org/api.json?&near=' + this.$store.state.latitude + "," + this.$store.state.longitude+ '&limit=5')
         .then(response => (this.info = response.data));
-        console.log(response.data);
+        console.log(response.data + "response");
         this.info = response.data;
-        
-                return '';
+
         }
+    },
+    computed: {
+        ...mapState['latitude','longitude'],
     },
     filters: {
         datefilter(a){

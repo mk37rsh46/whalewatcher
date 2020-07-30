@@ -2,23 +2,21 @@
 <div class = "intro">
   <h1>
     Whale Jokes!
-       <hr/>
-    </h1>
- 
+    <hr/>
+  </h1>
   <div>
-  <transition name="fade" mode="out-in">
-    <p key=1 v-if=this.switch >
-    
-   {{selectedQuestion}}<br> <br>
-   {{selectedPunchline}}
-    </p>
-    <p key=2 v-else>
-     {{selectedQuestion}}<br> <br>
-     {{selectedPunchline}}
+    <transition name="fade" mode="out-in">
+      <p key=1 v-if=this.switch>     
+        {{selectedQuestion}}<br> <br>
+        {{selectedPunchline}}
       </p>
-  </transition>
+      <p key=2 v-else>
+        {{selectedQuestion}}<br> <br>
+        {{selectedPunchline}}
+      </p>
+    </transition>
   </div>
- </div>
+</div>
 </template>
 
 <script>

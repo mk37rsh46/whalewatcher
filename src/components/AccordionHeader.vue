@@ -1,9 +1,7 @@
 <template>
-  <div id="accHead" >
-      {{numb | numfilter()}} {{spec}}s near  {{nere | wherefilter()}}
-   
-
-      </div>
+<div id="accHead" >
+    {{numb | numfilter()}} {{spec}}s near  {{nere | wherefilter()}}
+</div>
 </template>
 
 <script>
