@@ -63,8 +63,8 @@ export default {
     },
     asyncComputed: {
         newLocation(){
-        console.log('http://hotline.whalemuseum.org/api.json?&near=' + this.$store.state.latitude + "," + this.$store.state.longitude+ '&limit=5')
-        const response = axios.get('http://hotline.whalemuseum.org/api.json?&near=' + this.$store.state.latitude + "," + this.$store.state.longitude+ '&limit=5')
+        console.log('https://hotline.whalemuseum.org/api.json?&near=' + this.$store.state.latitude + "," + this.$store.state.longitude+ '&limit=5')
+        const response = axios.get('https://hotline.whalemuseum.org/api.json?&near=' + this.$store.state.latitude + "," + this.$store.state.longitude+ '&limit=5')
         .then(response => (this.info = response.data));
         console.log(response.data + "response");
         this.info = response.data;
