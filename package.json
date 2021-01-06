@@ -22,7 +22,7 @@
   },
   "dependencies": {
     "@syncfusion/ej2-vue-grids": "^18.2.45",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "core-js": "^3.6.5",
     "nativescript": "^6.7.8",
     "nativescript-vue": "^2.5.0-alpha.3",
